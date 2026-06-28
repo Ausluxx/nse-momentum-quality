@@ -84,7 +84,7 @@ TODAY = date.today()
 # SIDEBAR — single clean flow
 # ─────────────────────────────────────────────────────────────────────────────
 # Read mode from session state for the subtitle (safe before widget renders)
-_sidebar_mode = st.session_state.get("_mode_radio", "Long Only")
+_sidebar_mode = "Long Only"
 
 with st.sidebar:
     st.markdown(
@@ -188,15 +188,8 @@ with st.sidebar:
 
     # 6. Strategy mode
     st.markdown("<div class='slabel'>Strategy Mode</div>", unsafe_allow_html=True)
-    long_only = st.radio("Mode", ["Long Only", "Long-Short"], index=0,
-                         key="_mode_radio",
-                         label_visibility="collapsed",
-                         help="Long Only: buy top stocks, fully invested. "
-                              "Practical for India — no F&O needed.\n\n"
-                              "Long-Short: buy top, short bottom. "
-                              "Hedge fund style, needs F&O/margin.")
-    long_only_bool = (long_only == "Long Only")
-    st.caption("Benchmark: Nifty 50." if long_only_bool else "Dollar-neutral. Needs F&O.")
+
+    
     st.markdown("<hr class='div'>", unsafe_allow_html=True)
 
     # 7. Training window (advanced)
@@ -233,7 +226,7 @@ def _run_pipeline(start_str, end_str, lambdas, tw, max_pos,
     def cb(s, t, msg): prog.progress(s / t, text=msg)
     result = get_all_results(
         start=start_str, end=end_str, lambdas=lambdas, train_window=tw,
-        max_pos=max_pos, long_only=long_only, mom_weight=mom_w, qual_weight=qual_w,
+        max_pos=max_pos, mom_weight=mom_w, qual_weight=qual_w,
         ticker_subset=ticker_subset, progress_cb=cb,
     )
     prog.empty()
@@ -245,7 +238,7 @@ if universe_mode == "Custom selection" and len(custom_tickers) >= 10:
     ticker_subset = [t + ".NS" for t in custom_tickers]
 
 params_key = (f"{start_date}|{end_date}|{lam_choice}|{run_all}|{train_w}|"
-              f"{long_only}|{weight_mode}|{mom_weight}|{max_pos_pct}|{sorted(custom_tickers)}")
+              f"{weight_mode}|{mom_weight}|{max_pos_pct}|{sorted(custom_tickers)}")
 
 _first_load = "results" not in st.session_state
 if run_btn or _first_load:
@@ -257,7 +250,7 @@ if run_btn or _first_load:
     with st.spinner("Running pipeline …"):
         st.session_state["results"] = _run_pipeline(
             str(start_date), str(end_date), lambdas, train_w,
-            max_pos_pct / 100, long_only_bool,
+            max_pos_pct / 100,
             mom_weight,   # None = auto IC-derived
             qual_weight,  # None = auto IC-derived
             ticker_subset,
@@ -297,7 +290,7 @@ if len(backtest_results) > 1:
     _gross_rets = {l: compute_stats(df["gross_ret"])["ann_ret"] for l, df in backtest_results.items()}
     _best_net   = max(_net_rets,   key=_net_rets.get)
     _best_gross = max(_gross_rets, key=_gross_rets.get)
-    if _best_net != min(backtest_results.keys()):
+    if _best_net != min(backtest_results.keys()):  # λ=0 rarely beats λ=0.05+ net of costs
         st.caption(
             f"ℹ️  λ={_best_net} has the best net return — this is normal. "
             f"λ=0 trades most aggressively (highest gross alpha) but pays the most in "
@@ -343,17 +336,17 @@ for w in _warns:
 # ─────────────────────────────────────────────────────────────────────────────
 # HEADER + KPIs
 # ─────────────────────────────────────────────────────────────────────────────
-mode_str = "Long Only" if long_only_bool else "Long-Short"
+
 univ_str = f"{_n_stocks} stocks" if ticker_subset is None else f"{_n_stocks} stocks (custom)"
 st.markdown(
     f"<div style='display:flex;align-items:baseline;gap:14px;margin-bottom:2px'>"
     f"<span style='font-size:1.55rem;font-weight:600;color:{CREAM};"
     f"font-family:Inter,sans-serif'>NSE Factor Strategy</span>"
     f"<span style='font-size:.78rem;color:{MUTED};font-family:Inter,sans-serif'>"
-    f"Momentum + Quality  ·  {mode_str}  ·  Walk-Forward</span></div>"
+    f"Momentum + Quality  ·  Long Only  ·  Walk-Forward</span></div>"
     f"<div style='font-size:.76rem;color:{MUTED};"
     f"font-family:JetBrains Mono,monospace;margin-bottom:6px'>"
-    f"λ={primary_lam}  ·  Net  ·  {actual_start} – {actual_end}  ·  {univ_str}  ·  "
+    f"λ={primary_lam}  ·  Net  ·  Long Only  ·  {actual_start} – {actual_end}  ·  {univ_str}  ·  "
     f"Mom {meta['w_mom']:.0%} / Qual {meta['w_qual']:.0%}</div>",
     unsafe_allow_html=True,
 )
@@ -850,11 +843,11 @@ with tabs[3]:
             f"font-family:JetBrains Mono,monospace;margin-bottom:3px'>"
             f"{t.replace('.NS','')} "
             f"<span style='color:{MUTED}'>{abs(w)*100:.1f}% avg wt</span></div>"
-            for t, w in top_shorts.items()]) if not long_only_bool else ""
+            for t, w in top_shorts.items()]) if False else ""
         short_section = (
             f"<div><div style='font-size:.72rem;color:{CORAL};font-weight:600;"
             f"margin-bottom:6px'>Consistent Shorts</div>{short_html}</div>"
-        ) if not long_only_bool else ""
+        ) if False else ""
 
         explain = (
             "Fully invested in top-ranked stocks by momentum and quality. "
@@ -899,7 +892,7 @@ with tabs[3]:
             latest_w     = latest_w_raw[latest_w_raw.abs() > 0.001].sort_values()
             longs        = (latest_w > 0).sum()
             shorts       = (latest_w < 0).sum()
-            mode_info    = f"{longs} positions" if long_only_bool else f"{longs} long  ·  {shorts} short"
+            mode_info    = f"{longs} positions"
             invested_pct = latest_w_raw[latest_w_raw > 0].sum() * 100
             st.markdown(
                 f"<div style='font-size:.75rem;color:{MUTED};"
