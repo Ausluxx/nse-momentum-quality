@@ -112,7 +112,6 @@ nse-momentum-quality/
 ├── config.py                          — all parameters (tickers, costs, windows)
 ├── nse_momentum_quality_backtest.py   — core pipeline library
 ├── dashboard.py                       — Streamlit interactive dashboard
-├── nse_factor_strategy_guide.html     — complete quantitative finance reference
 └── data/
     └── README.md                      — data sources and how to use real fundamentals
 ```
