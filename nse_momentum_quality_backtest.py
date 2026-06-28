@@ -14,11 +14,11 @@ TICKERS = [
     "LTIMindtree.NS",
     "RELIANCE.NS",  "ONGC.NS",       "BPCL.NS",       "NTPC.NS",       "POWERGRID.NS",
     "COALINDIA.NS",
-    "LT.NS",        "ADANIPORTS.NS", "HAL.NS",         "BEL.NS",        "ADANIENT.NS",
+    "LT.NS",        "ADANIPORTS.NS", "HAL.NS",        "BEL.NS",        "ADANIENT.NS",
     "HAVELLS.NS",
     "HINDUNILVR.NS","ITC.NS",        "BRITANNIA.NS",  "TATACONSUM.NS", "NESTLEIND.NS",
     "DMART.NS",
-    "MARUTI.NS",    "BAJAJ-AUTO.NS", "M&M.NS",         "TITAN.NS",      "TRENT.NS",
+    "MARUTI.NS",    "BAJAJ-AUTO.NS", "M&M.NS",        "TITAN.NS",      "TRENT.NS",
     "TATAMOTORS.NS","EICHERMOT.NS",
     "TATASTEEL.NS", "JSWSTEEL.NS",   "HINDALCO.NS",   "GRASIM.NS",     "ULTRACEMCO.NS",
     "ASIANPAINT.NS","PIDILITIND.NS", "BERGEPAINT.NS",
@@ -30,28 +30,28 @@ TICKERS = [
 TICKERS = list(dict.fromkeys(TICKERS))
 
 SECTOR_MAP = {
-    "HDFCBANK.NS":   "Financials",  "ICICIBANK.NS":  "Financials",  "SBIN.NS":       "Financials",
-    "AXISBANK.NS":   "Financials",  "KOTAKBANK.NS":  "Financials",  "BAJFINANCE.NS": "Financials",
-    "INDUSINDBK.NS": "Financials",  "SHRIRAMFIN.NS": "Financials",  "BAJAJFINSV.NS": "Financials",
-    "JIOFIN.NS":     "Financials",  "HDFCLIFE.NS":   "Financials",  "SBILIFE.NS":    "Financials",
-    "MUTHOOTFIN.NS": "Financials",
-    "TCS.NS":        "IT",          "INFY.NS":       "IT",          "HCLTECH.NS":    "IT",
-    "WIPRO.NS":      "IT",          "TECHM.NS":      "IT",          "LTIMindtree.NS":"IT",
-    "RELIANCE.NS":   "Energy",      "ONGC.NS":       "Energy",      "BPCL.NS":       "Energy",
-    "NTPC.NS":       "Energy",      "POWERGRID.NS":  "Energy",      "COALINDIA.NS":  "Energy",
-    "LT.NS":         "Industrials", "ADANIPORTS.NS": "Industrials", "HAL.NS":        "Industrials",
-    "BEL.NS":        "Industrials", "ADANIENT.NS":   "Industrials", "HAVELLS.NS":    "Industrials",
-    "HINDUNILVR.NS": "ConsStaples", "ITC.NS":        "ConsStaples", "BRITANNIA.NS":  "ConsStaples",
-    "TATACONSUM.NS": "ConsStaples", "NESTLEIND.NS":  "ConsStaples", "DMART.NS":      "ConsStaples",
-    "MARUTI.NS":     "ConsDisc",    "BAJAJ-AUTO.NS": "ConsDisc",    "M&M.NS":        "ConsDisc",
-    "TITAN.NS":      "ConsDisc",    "TRENT.NS":      "ConsDisc",    "TATAMOTORS.NS": "ConsDisc",
-    "EICHERMOT.NS":  "ConsDisc",
-    "TATASTEEL.NS":  "Materials",   "JSWSTEEL.NS":   "Materials",   "HINDALCO.NS":   "Materials",
-    "GRASIM.NS":     "Materials",   "ULTRACEMCO.NS": "Materials",   "ASIANPAINT.NS": "Materials",
-    "PIDILITIND.NS": "Materials",   "BERGEPAINT.NS": "Materials",
-    "SUNPHARMA.NS":  "Healthcare",  "DRREDDY.NS":    "Healthcare",  "CIPLA.NS":      "Healthcare",
-    "DIVISLAB.NS":   "Healthcare",  "APOLLOHOSP.NS": "Healthcare",  "TORNTPHARM.NS": "Healthcare",
-    "BHARTIARTL.NS": "Telecom",
+    "HDFCBANK.NS":    "Financials",  "ICICIBANK.NS":   "Financials",  "SBIN.NS":       "Financials",
+    "AXISBANK.NS":    "Financials",  "KOTAKBANK.NS":   "Financials",  "BAJFINANCE.NS": "Financials",
+    "INDUSINDBK.NS":  "Financials",  "SHRIRAMFIN.NS":  "Financials",  "BAJAJFINSV.NS": "Financials",
+    "JIOFIN.NS":      "Financials",  "HDFCLIFE.NS":    "Financials",  "SBILIFE.NS":    "Financials",
+    "MUTHOOTFIN.NS":  "Financials",
+    "TCS.NS":         "IT",          "INFY.NS":        "IT",          "HCLTECH.NS":    "IT",
+    "WIPRO.NS":       "IT",          "TECHM.NS":       "IT",          "LTIMindtree.NS":"IT",
+    "RELIANCE.NS":    "Energy",      "ONGC.NS":        "Energy",      "BPCL.NS":       "Energy",
+    "NTPC.NS":        "Energy",      "POWERGRID.NS":   "Energy",      "COALINDIA.NS":  "Energy",
+    "LT.NS":          "Industrials", "ADANIPORTS.NS":  "Industrials", "HAL.NS":        "Industrials",
+    "BEL.NS":         "Industrials", "ADANIENT.NS":    "Industrials", "HAVELLS.NS":    "Industrials",
+    "HINDUNILVR.NS":  "ConsStaples", "ITC.NS":         "ConsStaples", "BRITANNIA.NS":  "ConsStaples",
+    "TATACONSUM.NS":  "ConsStaples", "NESTLEIND.NS":   "ConsStaples", "DMART.NS":      "ConsStaples",
+    "MARUTI.NS":      "ConsDisc",    "BAJAJ-AUTO.NS":  "ConsDisc",    "M&M.NS":        "ConsDisc",
+    "TITAN.NS":       "ConsDisc",    "TRENT.NS":       "ConsDisc",    "TATAMOTORS.NS": "ConsDisc",
+    "EICHERMOT.NS":   "ConsDisc",
+    "TATASTEEL.NS":   "Materials",   "JSWSTEEL.NS":    "Materials",   "HINDALCO.NS":   "Materials",
+    "GRASIM.NS":      "Materials",   "ULTRACEMCO.NS":  "Materials",   "ASIANPAINT.NS": "Materials",
+    "PIDILITIND.NS":  "Materials",   "BERGEPAINT.NS":  "Materials",
+    "SUNPHARMA.NS":   "Healthcare",  "DRREDDY.NS":     "Healthcare",  "CIPLA.NS":      "Healthcare",
+    "DIVISLAB.NS":    "Healthcare",  "APOLLOHOSP.NS":  "Healthcare",  "TORNTPHARM.NS": "Healthcare",
+    "BHARTIARTL.NS":  "Telecom",
 }
 
 START_DATE   = "2019-01-01"
@@ -125,8 +125,8 @@ def download_benchmark(ticker=NIFTY_TICKER, start=START_DATE, end=END_DATE):
 def build_fundamentals(tickers, dates):
     """
     Sector-aware synthetic fundamentals (ROE, D/E, ROE volatility).
-    To use real data replace with:
-        df = pd.read_csv("screener_fundamentals.csv", parse_dates=["date"])
+    Replace with real data:
+        df = pd.read_csv("data/screener_fundamentals.csv", parse_dates=["date"])
         return df.set_index(["date","ticker"])[["roe","de_ratio","roe_std"]]
     """
     SECTOR_DEFAULTS = {
@@ -150,7 +150,7 @@ def build_fundamentals(tickers, dates):
         base_rs  = max(rng.exponential(rs_mu), 0.5)
         for q in qtrs:
             records.append({
-                "date":     q,  "ticker":   tkr,
+                "date":     q,     "ticker":   tkr,
                 "roe":      max(base_roe + rng.normal(0, 2), -30),
                 "de_ratio": max(base_de  + rng.normal(0, 0.1), 0),
                 "roe_std":  max(base_rs  + rng.normal(0, 0.5), 0.1),
@@ -222,11 +222,9 @@ def combine_signals(mom_z, qual_z, prices, train_window=TRAIN_WINDOW,
     mom_m, qual_m, ret_m = mom_m.loc[idx], qual_m.loc[idx], ret_m.loc[idx]
     fwd           = ret_m.shift(-1)
 
-    # Full IC series for display
     ic_mom_full  = _compute_ic_series(mom_m,  fwd)
     ic_qual_full = _compute_ic_series(qual_m, fwd)
 
-    # Training-only IC for weight estimation — no lookahead bias
     train_idx     = min(train_window, len(mom_m) - 1)
     ic_mom_train  = _compute_ic_series(mom_m.iloc[:train_idx],  fwd.iloc[:train_idx])
     ic_qual_train = _compute_ic_series(qual_m.iloc[:train_idx], fwd.iloc[:train_idx])
@@ -256,18 +254,18 @@ def combine_signals(mom_z, qual_z, prices, train_window=TRAIN_WINDOW,
     else:
         print(f"       Blend (IC-derived) → Momentum: {w_mom:.1%}  Quality: {w_qual:.1%}")
 
-    valid_idx  = fwd.dropna(how="all").index
-    mom_m_v    = mom_m.reindex(valid_idx)
-    qual_m_v   = qual_m.reindex(valid_idx)
-    composite  = w_mom * mom_m_v.fillna(0) + w_qual * qual_m_v.fillna(0)
+    valid_idx = fwd.dropna(how="all").index
+    mom_m_v   = mom_m.reindex(valid_idx)
+    qual_m_v  = qual_m.reindex(valid_idx)
+    composite = w_mom * mom_m_v.fillna(0) + w_qual * qual_m_v.fillna(0)
 
     meta = {
         "w_mom": w_mom, "w_qual": w_qual,
-        "weight_source": "override" if mom_weight is not None else "IC-derived",
-        "icir_mom": icir_mom, "icir_qual": icir_qual,
-        "ic_mom": ic_mom_full, "ic_qual": ic_qual_full,
-        "fwd_ret": fwd.reindex(valid_idx),
-        "mom_monthly": mom_m_v, "qual_monthly": qual_m_v,
+        "weight_source":     "override" if mom_weight is not None else "IC-derived",
+        "icir_mom":          icir_mom, "icir_qual":        icir_qual,
+        "ic_mom":            ic_mom_full, "ic_qual":        ic_qual_full,
+        "fwd_ret":           fwd.reindex(valid_idx),
+        "mom_monthly":       mom_m_v, "qual_monthly":      qual_m_v,
         "train_end_date":    mom_m.index[train_idx - 1] if train_idx > 0 else mom_m.index[0],
         "test_start_date":   mom_m.index[train_idx] if train_idx < len(mom_m) else mom_m.index[-1],
         "train_window_used": train_idx,
@@ -276,19 +274,19 @@ def combine_signals(mom_z, qual_z, prices, train_window=TRAIN_WINDOW,
     return composite, meta
 
 
-def optimise_weights(alpha, w_prev, lam, n, max_pos=0.08, long_only=True):
-    w = cp.Variable(n)
-    if long_only:
-        prob = cp.Problem(
-            cp.Maximize(alpha @ w - lam * cp.norm1(w - w_prev)),
-            [cp.sum(w) == 1, w >= 0, w <= max_pos]
-        )
-    else:
-        prob = cp.Problem(
-            cp.Maximize(alpha @ w - lam * cp.norm1(w - w_prev)),
-            [cp.norm1(w) <= 1, cp.sum(w) == 0,
-             w <=  max_pos, w >= -max_pos]
-        )
+def optimise_weights(alpha, w_prev, lam, n, max_pos=0.08):
+    """
+    Long-only turnover-penalised QP:
+        max  alpha @ w  −  λ · ‖w − w_prev‖₁
+        s.t. Σwᵢ = 1   (fully invested)
+             wᵢ ≥ 0    (no shorts)
+             wᵢ ≤ max_pos  (diversification cap)
+    """
+    w    = cp.Variable(n)
+    prob = cp.Problem(
+        cp.Maximize(alpha @ w - lam * cp.norm1(w - w_prev)),
+        [cp.sum(w) == 1, w >= 0, w <= max_pos]
+    )
     try:
         prob.solve(solver=cp.OSQP, warm_start=True, verbose=False,
                    max_iter=10_000, eps_abs=1e-6, eps_rel=1e-6)
@@ -297,18 +295,17 @@ def optimise_weights(alpha, w_prev, lam, n, max_pos=0.08, long_only=True):
     return w.value if w.value is not None else w_prev
 
 
-def run_backtest(composite, prices, lam, train_window=TRAIN_WINDOW,
-                 max_pos=0.08, long_only=True):
+def run_backtest(composite, prices, lam, train_window=TRAIN_WINDOW, max_pos=0.08):
     ret_m   = prices.resample("ME").last().pct_change()
     dates   = composite.index
     tickers = composite.columns.tolist()
     n       = len(tickers)
-    w_prev  = np.ones(n) / n if long_only else np.zeros(n)
+    w_prev  = np.ones(n) / n   # start from equal weight
     results, weight_history = [], {}
 
     for t in range(train_window, len(dates) - 1):
         alpha     = composite.iloc[t].fillna(0).reindex(tickers).fillna(0).values
-        w_opt     = optimise_weights(alpha, w_prev, lam, n, max_pos, long_only)
+        w_opt     = optimise_weights(alpha, w_prev, lam, n, max_pos)
         next_date = dates[t + 1]
         r         = (ret_m.loc[next_date].reindex(tickers).fillna(0).values
                      if next_date in ret_m.index else np.zeros(n))
@@ -318,9 +315,9 @@ def run_backtest(composite, prices, lam, train_window=TRAIN_WINDOW,
         tc        = (turnover * TC_BPS / 10_000
                      + trades[trades > 0.005].sum() * SLIPPAGE_BPS / 10_000)
         results.append({
-            "date":      next_date, "gross_ret": gross,
-            "net_ret":   gross - tc, "turnover":  turnover,
-            "tc_drag":   tc,          "lambda":    lam,
+            "date":     next_date, "gross_ret": gross,
+            "net_ret":  gross - tc, "turnover":  turnover,
+            "tc_drag":  tc,          "lambda":    lam,
         })
         weight_history[next_date] = dict(zip(tickers, w_opt))
         w_prev = w_opt.copy()
@@ -328,7 +325,8 @@ def run_backtest(composite, prices, lam, train_window=TRAIN_WINDOW,
     return pd.DataFrame(results).set_index("date"), weight_history
 
 
-def run_naive_decile_backtest(composite, prices, train_window=TRAIN_WINDOW, long_only=True):
+def run_naive_decile_backtest(composite, prices, train_window=TRAIN_WINDOW):
+    """Equal-weight top decile benchmark — long-only."""
     ret_m = prices.resample("ME").last().pct_change()
     dates = composite.index
     rows  = []
@@ -338,18 +336,11 @@ def run_naive_decile_backtest(composite, prices, train_window=TRAIN_WINDOW, long
         if len(row) < 10 or nd not in ret_m.index:
             rows.append({"date": nd, "net_ret": 0.0})
             continue
-        r = ret_m.loc[nd]
-        if long_only:
-            q_cutoff = row.quantile(0.70 if len(row) < 20 else 0.80)
-            top      = row[row >= q_cutoff].index
-            ret      = r.reindex(top).mean() if len(top) > 0 else 0.0
-        else:
-            top    = row[row >= row.quantile(0.90)].index
-            bottom = row[row <= row.quantile(0.10)].index
-            ret    = (r.reindex(top).mean() - r.reindex(bottom).mean()) / 2
+        q_cutoff = row.quantile(0.70 if len(row) < 20 else 0.80)
+        top      = row[row >= q_cutoff].index
+        ret      = ret_m.loc[nd].reindex(top).mean() if len(top) > 0 else 0.0
         rows.append({"date": nd, "net_ret": float(ret) - 0.5 * TC_BPS / 10_000})
-    return pd.DataFrame(rows).set_index("date")["net_ret"].rename(
-        "Naive Top-Decile" if long_only else "Naive Decile L/S")
+    return pd.DataFrame(rows).set_index("date")["net_ret"].rename("Naive Top-Decile")
 
 
 def compute_stats(returns):
@@ -369,15 +360,16 @@ def compute_stats(returns):
     return {
         "ann_ret": ann_ret, "ann_vol": ann_vol, "sharpe":  sharpe,
         "sortino": sortino, "max_dd":  dd.min(), "calmar":  ann_ret / (abs(dd.min()) + 1e-8),
-        "hit_rate": (ret > 0).mean(),
-        "rolling_sharpe": roll_sh, "drawdown_series": dd, "cum_returns": cum,
+        "hit_rate":       (ret > 0).mean(),
+        "rolling_sharpe": roll_sh,
+        "drawdown_series": dd,
+        "cum_returns":     cum,
     }
 
 
 def get_all_results(start=START_DATE, end=END_DATE,
                     lambdas=None, train_window=TRAIN_WINDOW,
-                    max_pos=0.08, long_only=True,
-                    mom_weight=None, qual_weight=None,
+                    max_pos=0.08, mom_weight=None, qual_weight=None,
                     ticker_subset=None, progress_cb=None):
     if lambdas is None:
         lambdas = LAMBDAS
@@ -407,12 +399,12 @@ def get_all_results(start=START_DATE, end=END_DATE,
     _cb(5, 7, "Running backtests …")
     backtest_results, weight_histories = {}, {}
     for lam in lambdas:
-        df, wh = run_backtest(composite, prices, lam, train_window, max_pos, long_only)
+        df, wh = run_backtest(composite, prices, lam, train_window, max_pos)
         backtest_results[lam] = df
         weight_histories[lam] = wh
 
     _cb(6, 7, "Running naïve baseline …")
-    naive_returns = run_naive_decile_backtest(composite, prices, train_window, long_only)
+    naive_returns = run_naive_decile_backtest(composite, prices, train_window)
 
     _cb(7, 7, "Done ✓")
     return {
