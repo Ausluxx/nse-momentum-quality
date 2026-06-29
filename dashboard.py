@@ -852,9 +852,6 @@ with tabs[3]:
         explain = (
             "Fully invested in top-ranked stocks by momentum and quality. "
             "Returns come from owning better businesses at the right time."
-            if long_only_bool else
-            "Longs: high momentum, high quality. Shorts: low momentum, high leverage. "
-            "Returns come from the spread between the two groups."
         )
 
         st.markdown(
