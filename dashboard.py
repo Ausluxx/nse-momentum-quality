@@ -221,7 +221,7 @@ with st.sidebar:
 # PIPELINE
 # ─────────────────────────────────────────────────────────────────────────────
 def _run_pipeline(start_str, end_str, lambdas, tw, max_pos,
-                  long_only, mom_w, qual_w, ticker_subset):
+                  mom_w, qual_w, ticker_subset):
     prog = st.progress(0, text="Initialising …")
     def cb(s, t, msg): prog.progress(s / t, text=msg)
     result = get_all_results(
